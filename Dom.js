@@ -18,15 +18,45 @@
 
 // console.log(element)
 // Add class
-let div=document.querySelector('div');
-div.classList.add('error');
-div.classList.remove('error')
+// let div=document.querySelector('div');
+// div.classList.add('error');
+// div.classList.remove('error')
 
-div.classList.add('success');
+// div.classList.add('success');
 
-// Add styling
+// // Add styling
 
-let p=document.querySelector('p');
-p.style.fontSize='18px';
+// let p=document.querySelector('p');
+// p.style.fontSize='18px';
 
-div.style.border='2px solid #cac2c1'
+// div.style.border='2px solid #cac2c1'
+
+let btn=document.querySelector('button');
+
+// click Event
+// btn.addEventListener('click',()=>{
+//     document.body.style.background='#434344'
+// })
+
+// Mouse Events
+
+    // Mouseover
+// btn.addEventListener('mouseover',()=>{
+//     alert('moseover')
+// })
+
+// mouseLeave
+
+// btn.addEventListener("mouseleave",()=>{
+// btn.style.background='blue'
+// })
+// btn.addEventListener("mousedown",()=>{
+// alert('mousDown')
+// })
+
+let typing=document.querySelector('.typing');
+let clone=document.querySelector('.clone');
+
+typing.addEventListener('keyup',()=>{
+    clone.innerHTML=typing.value
+})
