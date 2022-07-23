@@ -54,9 +54,39 @@ let btn=document.querySelector('button');
 // alert('mousDown')
 // })
 
-let typing=document.querySelector('.typing');
-let clone=document.querySelector('.clone');
+// let typing=document.querySelector('.typing');
+// let clone=document.querySelector('.clone');
 
-typing.addEventListener('keyup',()=>{
-    clone.innerHTML=typing.value
-})
+// typing.addEventListener('keyup',()=>{
+//     clone.innerText=typing.value
+// })
+
+
+
+// const request=new XMLHttpRequest();
+
+// request.addEventListener('readystatechange',()=>{
+//     if(request.readyState===4 && request.status===200){
+//         console.log(request.responseText)
+//     }
+//     else if(request.readyState===4){
+//         console.error('There is something!!')
+//     }
+// })
+
+// request.open('GET','https://jsonplaceholder.typicode.com/posts/1');
+
+// request.send();
+
+function shouldPrintFirst(callback){
+    setTimeout(()=>{
+        console.log('first')
+        callback()
+    },1000)
+}
+
+function shouldPrintSecond(){
+    console.log('second')
+}
+
+shouldPrintFirst(shouldPrintSecond)
