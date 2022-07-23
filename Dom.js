@@ -78,15 +78,36 @@ let btn=document.querySelector('button');
 
 // request.send();
 
-function shouldPrintFirst(callback){
-    setTimeout(()=>{
-        console.log('first')
-        callback()
-    },1000)
+// function shouldPrintFirst(callback){
+//     setTimeout(()=>{
+//         console.log('first')
+//         callback()
+//     },1000)
+// }
+
+// function shouldPrintSecond(){
+//     console.log('second')
+// }
+
+// shouldPrintFirst(shouldPrintSecond)
+
+//API with promises
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1')
+// .then(response=>{
+//     return response;
+// }).then(data=>{
+//     console.log(data)
+// }).catch(err=>console.log(err))
+
+//API with async await
+
+const GetAPI=async()=>{
+    const request=await fetch('https://jsonplaceholder.typicode.com/albums');
+    const response= await request.json();
+    return response;
 }
 
-function shouldPrintSecond(){
-    console.log('second')
-}
-
-shouldPrintFirst(shouldPrintSecond)
+GetAPI().then((data)=>{
+    console.log(data)
+}).catch((error)=>console.error(error))
